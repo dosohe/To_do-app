@@ -1,0 +1,35 @@
+projects:
+ - title: 'Семья'
+   todos:
+    - text: 'Забрать Галину из детского сада'
+      isCompleted: false
+    - text: 'Забрать обувь из ремонта'
+      isCompleted: false
+    - text: 'Заплатить за квартиру'
+      isCompleted: true
+    - text: 'Отправить письмо бабушке'
+      isCompleted: false
+    - text: 'Подготовить презентацию для СД'
+      isCompleted: false
+    - text: 'Заменить масло в двигателе до 23 апреля'
+      isCompleted: false
+    - text: 'Купить масло'
+      isCompleted: false
+ - title: 'Работа'
+   todos:
+    - text: 'Позвонить Валентину'
+      isCompleted: true
+    - text: 'Заполнить отчет'
+      isCompleted: true
+    - text: 'Позвонить заказчику'
+      isCompleted: false
+    - text: 'Отпраить документы'
+      isCompleted: false
+ - title: 'Прочее'
+   todos:
+    - text: 'Купить кроссовки'
+      isCompleted: false
+    - text: 'Подготовиться к поездке'
+      isCompleted: false
+    - text: 'Позвонить другу'
+      isCompleted: false

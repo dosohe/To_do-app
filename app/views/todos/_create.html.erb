@@ -1,0 +1,18 @@
+<%= form_for @todo ,:html => { :id => "fo" } do |form| %>
+<p>
+    <h2> <%= form.label "НОВАЯ ЗАДАЧА" %> </h2> <br>
+    <%= form.text_field :text, :placeholder => "Название задачи..." %>
+</p>
+
+<p>
+<%= form.collection_select :project_id, Project.all, :id, :title %>
+<%= form.label "Выберите категорию"%>
+</p>
+
+<p>
+  <!-- <input type="button" id="btn-c" value="ОТМЕНА"/> -->
+  <!-- <input type="submit" id="btn-s" value="ОК"/> -->
+  <%= link_to "ОТМЕНА", root_path, id: "btn-c" %>
+  <%= link_to "OK",root_path, id: "btn-s" %>
+</p>
+<% end %>

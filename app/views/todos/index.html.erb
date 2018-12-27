@@ -1,0 +1,29 @@
+<h1>Задачи</h1>
+<!-- <input type="button" id="btn-o" value="+"/> -->
+
+<%= link_to root_path, id: "add_todo" do %>
+   <%= image_tag "addTodoIcon.png" %>
+<% end %>
+
+ <table>
+   <% @projects.each do |project| %>
+      <tr>
+        <h2><%= project.title.upcase() %></h2>
+      </tr>
+
+        <ul>
+          <% @todos.each do |todo| %>
+            <% if todo.project_id == project.id%>
+                    <li><%= todo.text %> </li>
+            <% end %>
+
+         <% end %>
+        </ul>
+    <% end %>
+  </table>
+
+
+
+<div id ="submit_form">
+<%= render "create"%>
+</div>

@@ -12,4 +12,27 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
 //= require_tree .
+
+$(document).ready(function(){
+  $("#btn-s").click(function(event) {
+  event.preventDefault();
+  $('#fo').submit();
+  // alert('click');
+});
+});
+
+$(document).ready(function() {
+  $('#submit_form').hide();
+    $("#add_todo").click( function() {
+    event.preventDefault();
+    $('#submit_form').show(); ;
+    // alert('click');
+  });
+   $("#btn-c").click( function() {
+    event.preventDefault();
+    $('#submit_form').hide(); ;
+    // alert('click');
+  });
+  });

@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Seed Data"
+
+
+seed_file = Rails.root.join('db', 'seeds', 'seeds.yml')
+config = YAML::load_file(seed_file)
+# puts(config)
+
+num=0
+config["projects"].each do |project|
+        num+=1
+        Project.create!(title: project["title"])
+        # puts project["title"]
+
+        # get to the todos…
+        project["todos"].each do |todo|
+              Todo.create!(text: todo["text"],isCompleted:todo["isCompleted"],project_id: num)
+        end
+
+end
