@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+   font-family: 'Roboto-Light';
+   src:font-url('Roboto-Light.ttf') format('truetype');
+
+ }
+ @font-face {
+   font-family: 'Roboto-Regular';
+   src:font-url('Roboto-Regular.ttf') format('truetype');
+
+ }
+ @font-face {
+   font-family: 'Roboto-Medium';
+   src:font-url('Roboto-Medium.ttf') format('truetype');
+
+ }
+*{
+  margin: 0;
+  // padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #f8f8f8;
+}
+ .header {
+   height: 80px;
+   background: #3aafda;
+   width: 100%;
+
+ }
+.container{
+ display: flex;
+}
+ .logo {
+     font-family: 'Roboto-Regular';
+     font-size: 25px;
+     color:white;
+     line-height:80px;
+     flex:1 0 auto;
+     text-align: center;
+
+ }
+ .add_form {
+ padding-right: 30px;
+ padding-top: 30px;
+ }
+
+.pr_name{
+  font-family: 'Roboto-Medium';
+  font-size: 15px;
+  color:black;
+  padding: 15px 25px;
+
+}
+.todos{
+    // padding-top: 30px;
+    // padding-bottom: 0px;
+
+}
+.point{
+
+  padding: 20px 0px;
+
+  display: flex;
+}
+.text{
+  float: right;
+  font-family: 'Roboto-Light';
+  font-size: 17px;
+  padding-left: 25px;
+
+}
+.block{
+  
+}
+ .card{
+   width: 450px;
+   background: white;
+   -webkit-box-shadow: 0px 2px 6px -1px rgba(82,82,82,1);
+   -moz-box-shadow: 0px 2px 6px -1px rgba(82,82,82,1);
+   box-shadow: 0px 2px 6px -1px rgba(82,82,82,1);
+   margin: 25px;
+   // float:left;
+ }
+ hr{
+   color: f8f8f8;
+   border-width: 0.5px;
+ }
+ul{
+ list-style-type: none;
+ }

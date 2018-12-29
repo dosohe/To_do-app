@@ -1,29 +1,45 @@
-<h1>Задачи</h1>
+
 <!-- <input type="button" id="btn-o" value="+"/> -->
 
-<%= link_to root_path, id: "add_todo" do %>
-   <%= image_tag "addTodoIcon.png" %>
-<% end %>
+<div class="header">
+<div class ="container">
+  <div class ="logo">Задачи</div>
+  <div class ="add_form">
+    <%= link_to root_path, id: "add_todo" do %>
+      <%= image_tag "addTodoIcon.png", id: "img_todo" %>
+    <% end %>
+  </div>
+</div>
 
- <table>
+
+<div class = "block">
+<!-- <div class="container"> -->
    <% @projects.each do |project| %>
-      <tr>
-        <h2><%= project.title.upcase() %></h2>
-      </tr>
+ <div class ="card col-sm-12 col-md-4 col-lg-4">
+    <div class ="pr_name"><%= project.title.upcase() %></div><hr>
 
-        <ul>
+        <div class ="todos">
+          <ul>
           <% @todos.each do |todo| %>
             <% if todo.project_id == project.id%>
-                    <li><%= todo.text %> </li>
+
+                  <div class="point">
+                       <input type="checkbox" name="todo"> <div class="text"> <%= todo.text%></div>
+                  </div>
+
+
             <% end %>
 
          <% end %>
-        </ul>
+         </ul>
+       </div>
+     </div>
     <% end %>
-  </table>
+</div>
 
 
 
 <div id ="submit_form">
 <%= render "create"%>
+</div>
 </div>
