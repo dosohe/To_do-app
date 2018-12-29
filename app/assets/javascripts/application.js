@@ -43,3 +43,6 @@ $(document).ready(function() {
       increaseArea: '20%' // optional
     });
   });
+  $(document).ready(function() {
+      $('select').select2();
+  });
