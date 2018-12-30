@@ -22,11 +22,6 @@ $(document).ready(function(){
   var sub = false;
 
   $('input').iCheck({
-    checkboxClass: 'icheckbox_square-blue',
-    increaseArea: '20%' // optional
-  });
-
-  $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
   });
