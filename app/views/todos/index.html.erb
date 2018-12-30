@@ -1,8 +1,14 @@
-
-<!-- <input type="button" id="btn-o" value="+"/> -->
+<script>
+    <% @get = [] %>
+    <% @projects.each do |project| %>
+        <% project.todos.each do |todo| %>
+          <% if todo.isCompleted then @get.push todo.id end%>
+        <% end %>
+    <% end %>
+    <%= "var get = " + @get.to_s %>
+</script>
 
 <div class="header">
-<div class ="container">
   <div class ="logo">Задачи</div>
   <div class ="add_form">
     <%= link_to root_path, id: "add_todo" do %>
@@ -10,34 +16,33 @@
     <% end %>
   </div>
 </div>
-</div>
 
-<section class = "block">
-<!-- <div class="container"> -->
+<div class = "block">
    <% @projects.each do |project| %>
- <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-   <div class="card">
-
-    <div class ="pr_name"><%= project.title.upcase() %></div><hr>
-
+   <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+     <div class="card">
+          <div class ="pr_name"><%= project.title.upcase() %></div><hr>
           <div class ="todos">
-          <ul>
-          <% @todos.each do |todo| %>
-            <% if todo.project_id == project.id%>
-
+            <ul>
+              <% project.todos.each do |todo| %>
+                <%= form_for todo do |f| %>
                   <div class="point">
-                       <div class = "check"> <input type="checkbox" name="todo" ></div> <div class="text"> <%= todo.text%></div>
+                    <div class = "check"> <input id="todo<%= todo.id %>"type="checkbox" > </div>
+                    <div class="text"> <%= todo.text%></div>
                   </div>
-            <% end %>
-         <% end %>
-         </ul>
-       </div>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
        </div>
      </div>
     <% end %>
-</section>
+</div>
 
-
+<div id="myModal" class="modal">
   <div id ="submit_form">
-    <%= render "create"%>
+    <div class="window">
+      <%= render "create"%>
+    </div>
   </div>
+</div>

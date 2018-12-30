@@ -7,15 +7,19 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.create(todo_params)
-
+    @todo.isCompleted = false
+    @todo.save
     redirect_to root_path
   end
 
-  private
-    def todo_params
-      params.require(:todo).permit(:text, :isCompleted, :project_id)
-    end
-
   def update
+    @todo = Todo.find(params[:id])
+    @todo.update(:isCompleted => !@todo.isCompleted)
+    redirect_to root_path
   end
 end
+
+private
+  def todo_params
+    params.require(:todo).permit(:text, :isCompleted, :project_id)
+  end

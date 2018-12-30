@@ -1,0 +1,39 @@
+<div id="header">
+	<h1>Задачи</h1>
+	<a id="add_todo" href="#"><%= image_tag "addTodoIcon.png" %></a>
+</div>
+<div class="mainDiv">
+	<div class="container">
+		<div class="row">
+			<% @projects.each do |project| %>
+				<div class="col-lg-4 col-md-6 col-s-12">
+					<div class="project">
+						<div class="projectTitle">
+							<em><%= project.title %></em>
+						</div>
+						<% project.todos.each do |todo| %>
+							<%= form_for todo do |f| %>
+								<input type="checkbox" <%= if todo.isCompleted then "checked" end %> ><label class="todoText"><%= todo.text %></label><br/>
+							<%end%>
+						<%end%>
+					</div>
+				</div>
+			<%end%>
+		</div>
+	</div>
+
+	<div id="todo_form" class="cn">
+		<div class="projectTitle">
+			<em>Новая Задача</em>
+		</div>
+		<%= form_for @todo do |f| %>
+		  <%= f.text_field(:text, :placeholder => "Название задачи...", :class => "todoTextField" ) %><br/>
+		  <%= f.select( :project_id, options_from_collection_for_select(@projects, "id", "title"), {prompt: "Choose something"}, {:class => "select2-selection"}) %>
+		  <table>
+		  	<th id="cancel_todo">Отмена</th>
+		  	<th id="submit_todo">ОК</th>
+		  </table>
+		<% end %>
+	</div>
+</div>
+<div id="overlay"></div>

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  @font-face {
    font-family: 'Roboto-Light';
    src:font-url('Roboto-Light.ttf') format('truetype');
@@ -28,23 +29,23 @@
    src:font-url('Roboto-Medium.ttf') format('truetype');
 
  }
+
 *{
   margin: 0;
-  // padding: 0;
   box-sizing: border-box;
 }
+
 body{
   background-color: #f8f8f8;
 }
+
  .header {
    height: 80px;
    background: #3aafda;
    width: 100%;
-
+   display: flex;
  }
-.container{
- display: flex;
-}
+
  .logo {
      font-family: 'Roboto-Regular';
      font-size: 25px;
@@ -69,6 +70,7 @@ body{
 }
 .block{
   padding: 25px;
+
 
 }
 .point{
@@ -103,29 +105,97 @@ ul{
  list-style-type: none;
  }
 
-//  .window {
-//
-//    display: flex;
-//  }
-//  // #submit_form{
-//  //   display: flex;
-//  // }
- #submit_form {
 
-   width: 400px;
-   text-align: center;
-   background: #fff;
+#submit_form{
+  // border: solid 1px;
+  width: 550px;
+  height: 250px;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+   display: flex;
+
+}
+.window{
+  width: 500px;
+  flex:1 0 auto;
+  text-align: center;
+  // line-height:250px;
+
+}
+.holder{
+  margin: 20px auto;
+
+}
+.text_holder{
+  border: 1px solid #aaa;
+  font-family: 'Roboto-Light';
+  font-size: 17px;
+  width: 500px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.btn{
+  margin:15px;
+  width: 233px;
+  height: 40px;
+  padding: 10px 40px;
+  border: none;
+  background: grey;
+  font-family: 'Roboto-Medium';
+  font-size: 15px;
+  color:white;
+  cursor: pointer;
+
+}
+
+.btn:hover {background: #3aafda; }
+
+select{
+  width: 500px;
+
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: black;
+}
 
 
+.select2-selection, .select2-selection__rendered, .select2-selection__arrow {
 
- }
-// #fo{
-//   font-family: 'Roboto-Regular';
-//   font-size: 25px;
-//   color:black;
-//   line-height:350px;
-//   flex:1 0 auto;
-//   padding-left: 30px;
-//   text-align: center;
-//
-// }
+   height: 40px !important;
+   font-family: 'Roboto-Light';
+   font-size: 17px;
+
+   span {
+
+       line-height: 40px !important;
+       text-align: left;
+
+
+   }
+
+}
+
+.select2-selection {
+
+   border-radius: 0 !important;
+
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}

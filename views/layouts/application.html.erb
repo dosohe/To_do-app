@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oblako</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    
+    <%= stylesheet_link_tag    'vendor/minimal/blue' %>
+    <%= javascript_include_tag 'vendor/icheck' %>
+
+    <%= stylesheet_link_tag    'vendor/bootstrap' %>
+
+    <%= stylesheet_link_tag    'vendor/select2.min' %>
+    <%= javascript_include_tag 'vendor/select2.min' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

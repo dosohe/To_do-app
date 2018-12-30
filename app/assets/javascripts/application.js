@@ -15,34 +15,69 @@
 //= require jquery
 //= require_tree .
 
+
+
 $(document).ready(function(){
+
+  var sub = false;
+
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_square-blue',
+    increaseArea: '20%' // optional
+  });
+
+  $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+  });
+
+  $('input').on('ifChecked', function(event){
+      $(this).closest("form").css('text-decoration-line', 'line-through');
+      if (sub) {
+          $(this).closest("form").submit();
+      }
+  });
+
+  $('input').on('ifUnchecked', function (event) {
+      $(this).closest("form").css('text-decoration-line', 'initial');
+      if (sub) {
+          $(this).closest("form").submit();
+      }
+  });
+
+  $.each(get, function (index, num) {
+     $("#todo"+num).iCheck('check');
+  });
+  sub = true;
+
   $("#btn-s").click(function(event) {
   event.preventDefault();
   $('#fo').submit();
+  $('#myModal').hide();
   // alert('click');
 });
-});
 
-$(document).ready(function() {
-  $('#submit_form').hide();
+    $('#submit_form').hide();
     $("#add_todo").click( function() {
     event.preventDefault();
-    $('#submit_form').show(); ;
-    // alert('click');
-  });
-   $("#btn-c").click( function() {
-    event.preventDefault();
-    $('#submit_form').hide(); ;
-    // alert('click');
-  });
-  });
-
-  $(document).ready(function(){
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      increaseArea: '20%' // optional
+    $('#submit_form').show();
+    $('#myModal').show();
+    $('select').prepend('<option selected></option>').select2({
+      placeholder: "Категория",
+      minimumResultsForSearch: -1,
+      // 'allowClear': true
+        // allowClear: true
     });
   });
-  $(document).ready(function() {
-      $('select').select2();
+
+   $("#btn-c").click( function() {
+    event.preventDefault();
+    $('#submit_form').hide();
+    $('#myModal').hide();
+    // alert('click');
   });
+
+
+
+
+});
