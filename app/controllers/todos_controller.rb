@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+
+protect_from_forgery except: [:update, :create]
   def index
     @projects = Project.all
     @todos = Todo.all
@@ -16,6 +18,10 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.update(:isCompleted => !@todo.isCompleted)
     redirect_to root_path
+  end
+
+  def get_projects
+  render json: Project.all.to_json(:include => :todos)
   end
 end
 
