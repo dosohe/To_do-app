@@ -25,7 +25,7 @@
           <div class ="todos">
             <ul>
               <% project.todos.each do |todo| %>
-                <%= form_for todo do |f| %>
+                <%= form_with scope: :todo, url: todos_path + "/" + todo.id.to_s, local: true, :html => {:autocomplete => "off"} do |form|%>
                   <div class="point">
                     <div class = "check"> <input id="todo<%= todo.id %>"type="checkbox" > </div>
                     <div class="text"> <%= todo.text%></div>
