@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_todo_create">TodoCreate</string>
+    <string name="kIndexRequest">https://cryptic-thicket-73335.herokuapp.com/get_json</string>
+</resources>
