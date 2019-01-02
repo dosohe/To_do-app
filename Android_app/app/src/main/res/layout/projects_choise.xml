@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <CheckedTextView
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/systemBlackColor"
+        fontPath="fonts/OpenSans-Regular.ttf"
+        android:id="@+id/TextView"
+        android:checkMark="?android:attr/textCheckMark"
+        android:paddingStart="20dp" />
+
+
+</LinearLayout>
+
+
+<!--<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@android:id/text1"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:paddingStart="?android:attr/listPreferredItemPaddingStart"-->
+<!--android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"-->
+<!--android:theme="@style/TodoTheme"-->
+<!--android:textAppearance="?android:attr/textAppearanceListItemSmall"-->
+<!--android:checkMark="@drawable/checkmark_selector" />-->

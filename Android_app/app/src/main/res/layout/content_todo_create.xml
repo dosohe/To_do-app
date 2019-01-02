@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingPrefix"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_todo_create"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.andrew.myapplication.TodoCreate"
+    tools:showIn="@layout/activity_todo_create">
+
+    <TextView
+        android:text="Задача"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textIsSelectable="false"
+        android:textAllCaps="true"
+        fontPath="fonts/OpenSans-Semibold.ttf"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/systemBlackColor"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:background="@color/systemWhiteColor">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Навание задачи..."
+            android:padding="15dp"
+            android:layout_margin="10dp"
+            android:id="@+id/EditText"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:text="Категория"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textIsSelectable="false"
+        android:textAllCaps="true"
+        fontPath="fonts/OpenSans-Semibold.ttf"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/systemBlackColor"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/projectsList"
+        android:layout_marginTop="150dp"
+        fontPath="fonts/OpenSans-Regular.ttf"
+        android:clickable="true" />
+
+</RelativeLayout>
